@@ -5,3 +5,6 @@ edition = "2021"
 
 [dependencies]
 iced = {git = "https://github.com/iced-rs/iced", rev="7dd32f3be43c72e11dac5e07918e9ad6d36b6555"}
+
+[features]
+svg = ["iced/svg"]
