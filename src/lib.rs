@@ -1,1 +1,1 @@
-mod styles;
+pub mod styles;
