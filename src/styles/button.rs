@@ -17,6 +17,7 @@ pub enum ButtonState {
     Hovered,
     Pressed,
     Disabled,
+    All,
 }
 
 impl CustomButtonStyle {
@@ -93,6 +94,11 @@ impl CustomButtonStyle {
         self
     }
 
+    pub fn all(mut self) -> Self {
+        self.current_state = ButtonState::All;
+        self
+    }
+
     pub fn hovered(mut self) -> Self {
         self.current_state = ButtonState::Hovered;
         self
@@ -114,6 +120,12 @@ impl CustomButtonStyle {
             ButtonState::Hovered => self.hovered.background = background,
             ButtonState::Pressed => self.pressed.background = background,
             ButtonState::Disabled => self.disabled.background = background,
+            ButtonState::All => {
+                self.active.background = background;
+                self.hovered.background = background;
+                self.pressed.background = background;
+                self.disabled.background = background;
+            }
         }
         self
     }
@@ -124,6 +136,12 @@ impl CustomButtonStyle {
             ButtonState::Hovered => self.hovered.text_color = color,
             ButtonState::Pressed => self.pressed.text_color = color,
             ButtonState::Disabled => self.disabled.text_color = color,
+            ButtonState::All => {
+                self.active.text_color = color;
+                self.hovered.text_color = color;
+                self.pressed.text_color = color;
+                self.disabled.text_color = color;
+            }
         }
         self
     }
@@ -134,6 +152,12 @@ impl CustomButtonStyle {
             ButtonState::Hovered => self.hovered.background = Some(Background::Color(color)),
             ButtonState::Pressed => self.pressed.background = Some(Background::Color(color)),
             ButtonState::Disabled => self.disabled.background = Some(Background::Color(color)),
+            ButtonState::All => {
+                self.active.background = Some(Background::Color(color));
+                self.hovered.background = Some(Background::Color(color));
+                self.pressed.background = Some(Background::Color(color));
+                self.disabled.background = Some(Background::Color(color));
+            }
         }
         self
     }
@@ -144,6 +168,12 @@ impl CustomButtonStyle {
             ButtonState::Hovered => self.hovered.border_radius = radius,
             ButtonState::Pressed => self.pressed.border_radius = radius,
             ButtonState::Disabled => self.disabled.border_radius = radius,
+            ButtonState::All => {
+                self.active.border_radius = radius;
+                self.hovered.border_radius = radius;
+                self.pressed.border_radius = radius;
+                self.disabled.border_radius = radius;
+            }
         }
         self
     }
@@ -154,6 +184,12 @@ impl CustomButtonStyle {
             ButtonState::Hovered => self.hovered.border_width = width,
             ButtonState::Pressed => self.pressed.border_width = width,
             ButtonState::Disabled => self.disabled.border_width = width,
+            ButtonState::All => {
+                self.active.border_width = width;
+                self.hovered.border_width = width;
+                self.pressed.border_width = width;
+                self.disabled.border_width = width;
+            }
         }
         self
     }
@@ -164,6 +200,12 @@ impl CustomButtonStyle {
             ButtonState::Hovered => self.hovered.border_color = color,
             ButtonState::Pressed => self.pressed.border_color = color,
             ButtonState::Disabled => self.disabled.border_color = color,
+            ButtonState::All => {
+                self.active.border_color = color;
+                self.hovered.border_color = color;
+                self.pressed.border_color = color;
+                self.disabled.border_color = color;
+            }
         }
         self
     }
@@ -174,6 +216,12 @@ impl CustomButtonStyle {
             ButtonState::Hovered => self.hovered.shadow_offset = offset,
             ButtonState::Pressed => self.pressed.shadow_offset = offset,
             ButtonState::Disabled => self.disabled.shadow_offset = offset,
+            ButtonState::All => {
+                self.active.shadow_offset = offset;
+                self.hovered.shadow_offset = offset;
+                self.pressed.shadow_offset = offset;
+                self.disabled.shadow_offset = offset;
+            }
         }
         self
     }
