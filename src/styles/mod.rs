@@ -1,7 +1,7 @@
-pub mod container;
 pub mod button;
+pub mod container;
 pub mod scrollable;
-pub mod text;
 #[cfg(feature = "svg")]
 pub mod svg;
+pub mod text;
 pub mod text_input;
